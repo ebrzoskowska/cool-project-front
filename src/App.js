@@ -1,12 +1,24 @@
-import React from 'react';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import './index.css'
 
-function App() {
+import { LandingPage } from './pages/landing';
+import { Shop } from './pages/shop';
+
+const App = () => {
+
+  const [user, setUser] = useState();
+
   return (
-    <div className="App">
-      <h1>Too cool to be true.</h1>
-    </div>
+    <Router>
+      {user ? <Redirect to='/shop'/> : <Redirect to='/'/>}
+      <Route exact path='/'>
+        <LandingPage setUser={setUser}/>
+      </Route>
+      <Route path='/shop'>
+        <Shop/>
+      </Route>
+    </Router>
   );
 }
 
