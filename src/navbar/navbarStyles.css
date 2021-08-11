@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 15vh;
+  background: #012A4A;
+  list-style-type: none;
+}
+
+.navMenu li {
+  padding-right: 3vw;
+}
+
+.navMenu a {
+  color: #fff;
+	font-size: 18px;
+	font-weight: 200;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+.navMenu button {
+	-moz-box-shadow: inset 0px 1px 0px 0px #89C2D9;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #89C2D9;
+	box-shadow: inset 0px 1px 0px 0px #89C2D9;
+	background-color: #89C2D9;
+	border: 1px solid #89C2D9;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.navMenu button:hover {
+	background:linear-gradient(to bottom, #61A5C2 5%, #2C7DA0 100%);
+	background-color:#61A5C2;
+}
+

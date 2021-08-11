@@ -1,10 +1,9 @@
 .formContainer {
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #012A4A;
 }
 
 .formElement {
@@ -58,6 +57,7 @@
 	padding: 8px 18px;
 	text-decoration: none;
   margin-bottom: 10px;
+	width: 100%;
 }
 
 .formElement button:hover {
@@ -71,3 +71,4 @@
     height: 70vh;
   }  
 }
+

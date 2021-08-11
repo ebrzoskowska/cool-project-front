@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 
+import './navbarStyles.css'
 
 export const Navbar = ({setUser}) => {
 
@@ -9,20 +10,18 @@ export const Navbar = ({setUser}) => {
     localStorage.removeItem('MyToken')
     setUser();
   }
-    return (
- <nav className="nav-bar">
-        <ul>
-          <li>
-            <Link to="/shop"> Mist Shop </Link>
-          </li>
-          <li>
-            <Link to="/accountDetails">Account Details </Link>
-          </li>
-          <li>
-            <button className="btn-logout" onClick={(e) =>logOutHandler(e)}>Logout</button>
-          </li>
-        </ul>
-      </nav>
-         );
-  
+
+  return (
+    <ul className="navMenu">
+      <li>
+        <Link to="/shop"> Mist Shop </Link>
+      </li>
+      <li>
+        <Link to="/accountDetails">Account Details </Link>
+      </li>
+      <li>
+        <button className="btn-logout" onClick={(e) =>logOutHandler(e)}>Logout</button>
+      </li>
+    </ul>
+  ); 
 };

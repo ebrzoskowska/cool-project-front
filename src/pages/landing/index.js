@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { fetchUsers } from '../../utils';
 import { Redirect } from "react-router-dom";
 
-
 import './landingStyles.css'
 
 export const LandingPage = ({user, setUser}) => {
@@ -16,10 +15,10 @@ export const LandingPage = ({user, setUser}) => {
 
   return (
     <div className='formContainer'>
-      <div>
+      <div className='formElement'>
       <h2>SIGN UP OR LOGIN TO YOUR ACCOUNT</h2>
-      </div>
-      <form className='formElement' onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
+      
+      <form onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
         {newUser && <input onChange={(e) =>setEmail(e.target.value)} placeholder='Email' />}
         <input onChange={(e) =>setUsername(e.target.value)} placeholder='Username' />
         <input onChange={(e) =>setPass(e.target.value)} placeholder='Password' />
@@ -32,7 +31,7 @@ export const LandingPage = ({user, setUser}) => {
       </form>
       <button type='button' onClick={() => setNewUser(!newUser)}>{newUser ? 'Log In' : 'Sign Up'}</button>
       {user && <Redirect to='/shop'/>}
-
+      </div>
     </div>
   )
 }
