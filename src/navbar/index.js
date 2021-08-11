@@ -13,7 +13,7 @@ export const Navbar = ({setUser}) => {
  <nav className="nav-bar">
         <ul>
           <li>
-            <Link to="/"> Mist Shop </Link>
+            <Link to="/shop"> Mist Shop </Link>
           </li>
           <li>
             <Link to="/accountDetails">Account Details </Link>
