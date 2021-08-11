@@ -17,12 +17,13 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
+                  username: username,
                   password: pass
               })
           })
       }
       const data = await response.json();
-      console.log(data.user)
+      localStorage.setItem("MyToken", data.token)
       setUser(data.user.username)
   } catch (error) {
       console.log(error)
