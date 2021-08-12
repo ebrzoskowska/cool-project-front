@@ -1,7 +1,10 @@
 import React from 'react';
+import {Navbar} from '../navbar'
 
 const GamePage = ({game}) => {
     return(<div>
+        <Navbar/>
+        <div>
         <p>{game.title}</p>
         <p>{game.year}</p>
         <p>{game.genre}</p>
@@ -19,6 +22,8 @@ const GamePage = ({game}) => {
                 )
             })}
         </div>
+        </div>
+        
 
     </div>)
 }
