@@ -1,0 +1,47 @@
+.gamesItem{
+    display: flexbox;
+    border: 5px solid #A9D6E5 ;
+    border-radius: 30px;
+    margin: 50px;
+    padding: 20px;
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    align-content: center;
+    background-color: #F4F4F9; 
+    /* colours etc. can be changed when styling all */
+    width: 100vw
+}
+
+.gamePic{
+    width: auto;
+    max-width: ;
+    height: 300px;
+  }
+.gamePic:hover{
+    animation: moreInfo 2s ease 0s 1 normal forwards;
+}
+
+.price{
+    text-align: center;
+}
+
+.title{
+    text-shadow: 6px 5px 6px #013a63;
+}
+
+@keyframes moreInfo {
+    0% {
+        transform: scale(1);
+      }
+    
+      100% {
+        transform: scale(1.1);
+      }
+
+    }
