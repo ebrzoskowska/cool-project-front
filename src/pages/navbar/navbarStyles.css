@@ -9,9 +9,15 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  min-height: 15vh;
-  background: #012A4A;
+  min-height: 20vh;
+  background: #052b46;
   list-style-type: none;
+  width: 100%;
+}
+
+.navMenuLogo {
+  width: 20vh;
+  display: flex;
 }
 
 .navMenu li {
@@ -30,6 +36,7 @@
 }
 
 .navMenu button {
+  align-self: flex-start;
 	-moz-box-shadow: inset 0px 1px 0px 0px #89C2D9;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #89C2D9;
 	box-shadow: inset 0px 1px 0px 0px #89C2D9;
