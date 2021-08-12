@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './shop.css'
 
 export const Shop = () => {
@@ -45,6 +46,7 @@ const getGames = async (game, setGame) => {
               <h4 className="info">Studio: {item.studio}</h4>
               <h4 className="info, price">{item.price}</h4>
               <button className ="basket">Add to Basket</button>
+              <Link to={`/${item._id}`}>More Info</Link>
             </div>
            )
             })}  

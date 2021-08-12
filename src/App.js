@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './index.css'
 import { LandingPage } from './pages/landing';
@@ -6,6 +6,7 @@ import { Shop } from './pages/shop';
 import { Account } from './pages/accountDetails'
 import { Navbar } from './pages/navbar';
 import { authUser } from './utils';
+import { GamePages } from './pages/individualGames/GamePages';
 // import logo from './components/mist-logo.png';
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
       <Route path='/accountDetails'>
         <Account setUser={setUser} user={user}/>
       </Route>
+      <GamePages/>
     </Router>
   );
 }
