@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
+// import logo from '../../components/mist-logo.png';
 
 import './navbarStyles.css'
 
@@ -13,6 +14,9 @@ export const Navbar = ({setUser}) => {
 
   return (
     <ul className="navMenu">
+    {/* <li>
+      <img className="navMenuLogo" src={logo} alt="Logo" />
+    </li> */}
       <li>
         <Link to="/shop"> Mist Shop </Link>
       </li>
