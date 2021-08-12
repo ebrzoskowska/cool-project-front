@@ -30,6 +30,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
   }
 };
 
+
 export const authUser = async (setUser) => {
     if (localStorage.MyToken) {
       try
