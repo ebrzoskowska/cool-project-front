@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './index.css'
 
@@ -10,8 +10,8 @@ const App = () => {
   const [user, setUser] = useState();
 
   return (
-    <Router>
-      {user ? <Redirect to='/shop'/> : <Redirect to='/'/>}
+        <Router>
+         {user ? <Redirect to='/shop'/> : <Redirect to='/shop'/>}
       <Route exact path='/'>
         <LandingPage setUser={setUser}/>
       </Route>
