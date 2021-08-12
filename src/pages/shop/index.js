@@ -10,7 +10,7 @@ export const Shop = () => {
 useEffect( async () => {
   //console.log("UseEffect")
   await getGames(game, setGame)
-  if (game.length>0){
+  if (game.length > 0) {
     setLoading(false)
   }  
 },[loading])
@@ -35,7 +35,7 @@ const getGames = async (game, setGame) => {
   } else {
     return (
       <div>
-        <div className="container">
+        <div className ="container">
           {game.map((item,index) => {
           return (
             <div className="gamesItem" key = {index}>
@@ -44,14 +44,13 @@ const getGames = async (game, setGame) => {
               <h4 className="info">Genre: {item.genre}</h4>
               <h4 className="info">Studio: {item.studio}</h4>
               <h4 className="info, price">{item.price}</h4>
-              <button className ="basket">Add to Basket</button>
+              <button className ="basketBtn">Add to Basket</button>
             </div>
            )
-            })}  
+          })}  
        </div>
-       </div>
-       )
+      </div>
+    )
   }
-
 }
 
