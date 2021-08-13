@@ -41,7 +41,7 @@ export const authUser = async (setUser) => {
         })
         const data = await response.json();
         console.log(data)
-      //   setUser(data.user.username);
+        setUser(data.username);
       }
       catch (error)
       {

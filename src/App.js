@@ -30,7 +30,7 @@ const App = () => {
       <Route path='/accountDetails'>
         <Account setUser={setUser} user={user}/>
       </Route>
-      <GamePages/>
+      <GamePages setUser={setUser}/>
     </Router>
   );
 }
