@@ -69,15 +69,15 @@
 	background-color:#61A5C2;
 	border: 1px solid #61A5C2;
     color: black;
-  }
+}
 
 @keyframes moreInfo {
     0% {
         transform: scale(1);
-      }
-    
-      100% {
-        transform: scale(1.1);
-      }
-
     }
+    
+    100% {
+        transform: scale(1.1);
+    }
+
+}
