@@ -30,7 +30,7 @@ if (loading) {
     return (<h1 className = "Loading">Loading...</h1>)
   } else {
     return(
-        <div className="gamePage__container">
+        <div>
             <div>
             {games.map((item, index) => {
                 return (

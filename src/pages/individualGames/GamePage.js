@@ -30,40 +30,42 @@ const GamePage = ({game}) => {
         console.log(newGame);
     }
 
-
-
-    return(<div>
+    return(
+    <div className='gamePage__container'>
         <Navbar setUser={setUser}/>
-        <div>
-        <p>{game.title}</p>
-        <p>{game.year}</p>
-        <p>{game.genre}</p>
-        <p>{game.studio}</p>
+        <div className='gamePage__game-details'>
+            <div className='gamePage__game-title'>
+                <h1>{game.title}</h1>
+            </div>    
+            <div className='gamePage__game-info'>
+                <p>studio: {game.studio}</p>    
+                <p>year: {game.year}</p>
+                <p>genre: {game.genre}</p>               
+            </div>
         <div>
             {game.comments.map((comment, index)=>{
                 return(
-                    <div key={index}>
-                        <p>{comment.user}</p>
-                        <p>{comment.date}</p>
+                    <div className='gamePage__comment-wrapper' key={index}>
+                        <div className='gamePage__user-info'>
+                            <p>posted by: {comment.user}</p>
+                            <p>date: {comment.date}</p>
+                        </div>    
                         <p>{comment.content}</p>
                         <p>{comment.rating}</p>
-
-                    </div>
+                    </div>    
                 )
             })}
         </div>
-        <div>
-            <form>
-                <input placeholder="user" onChange={(e) =>setUser(e.target.value)}/>
-                <input placeholder="Your post goes here" onChange={(e) =>setContent(e.target.value)}/>
+        <div className='gamePage__form-wrapper'>
+            <form className='gamePage__form'>
+                <input className='gamePage__input' placeholder="user" onChange={(e) =>setUser(e.target.value)}/>
+                <input className='gamePage__input gamePage__input-post' placeholder="your post..." onChange={(e) =>setContent(e.target.value)}/>
                 {/* <input type="radio" onSelect={()=>{setRecommend(true)}}>Thumbs Up</input>
                 <input type="radio" onSelect={()=>{setRecommend(false)}}>Thumbs Down</input> */}
-                <button type="submit" onClick={()=>{postComment(game, user, content, recommend)}}>Post</button>
+                <button className='btn' type="submit" onClick={()=>{postComment(game, user, content, recommend)}}>Post</button>
             </form>
         </div>
         </div>
-        
-
     </div>)
 }
 

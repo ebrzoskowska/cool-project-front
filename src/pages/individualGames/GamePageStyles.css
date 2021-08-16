@@ -8,11 +8,91 @@
 
 .gamePage__container {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
 	background: #052b46;
   color: white;
   font-family: 'DM Sans', sans-serif;  
+}
+
+.gamePage__game-details {
+  width: 80%;
+  font-size: 25px;
+}
+
+.gamePage__game-title {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.gamePage__game-info {
+  display: flex;
+  justify-content: center;
+}
+
+.gamePage__game-info p {
+  padding: 20px 10px;
+}
+
+.gamePage__comment-wrapper {
+  margin-bottom: 2em;
+  font-size: 16px;
+  box-shadow: 20px 25px 22px -10px #000000;
+  border-bottom: 2px solid black;
+  padding: 20px;
+}
+
+.gamePage__user-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.gamePage__form-wrapper {
+  margin: 20px 0 40px 0;
+}
+
+.gamePage__form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gamePage__input {
+  margin-left: 10px;
+  background: black;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 20px 25px 22px -10px #000000;
+  color: #A9D6E5;
+  padding-left: 15px;
+  outline: none;
+}
+
+.gamePage__input-post {
+  flex-grow: 1;
+}
+
+.gamePage__input::placeholder {
+  color: #A9D6E5;
+  padding-left: 15px;
+  font-size: 1rem;
+  background: black;
+}
+
+.btn {
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #000;
+  color: white;
+  border: 1px solid #000;
+  margin: 0 1rem;
+  width: fit-content;
+  align-self: center;
+  font-size: 20px;
+  box-shadow: 20px 25px 22px -10px #000000;
 }
