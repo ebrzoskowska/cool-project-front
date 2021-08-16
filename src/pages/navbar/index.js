@@ -19,7 +19,8 @@ export const Navbar = ({setUser}) => {
     </div>
     <div className="navMenuContainer">
       <Link to="/shop"> Mist Shop </Link>
-      <Link to="/accountDetails">Account Details </Link>
+      <Link to="/accountDetails">Account Details </Link>.
+      <Link to="/basket"> Basket </Link>
       <button className="btn-logout" onClick={(e) =>logOutHandler(e)}>Logout</button>
     </div>  
     </ul>
