@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import { GamePage } from "./GamePage";
 import './GamePageStyles.css'
 
-const GamePages = () =>{
+const GamePages = ({user, setUser}) =>{
 
 const [loading, setLoading] = useState(true);
 const [games, setGames] = useState("Loading");
@@ -30,14 +30,14 @@ if (loading) {
     return (<h1 className = "Loading">Loading...</h1>)
   } else {
     return(
-        <div className="gamePage__container">
+        <div>
             <div>
             {games.map((item, index) => {
                 return (
                     <Route
                     key={index}
                     path={`/${item._id}`}
-                    children={<GamePage game={item} />}
+                    children={<GamePage game={item} user={user} setUser={setUser}/>}
                     />
                 );
             })}

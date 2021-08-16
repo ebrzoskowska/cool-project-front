@@ -33,13 +33,13 @@ const App = () => {
         <Shop loading={loading} setLoading={setLoading} game={game} setGame={setGame} items={items} setItems={setItems} prices={prices} setPrices={setPrices}/>
       </Route>
       <Route path='/accountDetails'>
-        <Account user={user}/>
+        <Account user={user} setUser={setUser}/>
       </Route>
       <Route path='/basket'>
         <Navbar setUser={setUser} />
         <Cart items={items} setItems={setItems} prices={prices} setPrices={setPrices}/>
            </Route>
-      <GamePages setUser={setUser}/>
+      <GamePages user={user} setUser={setUser}/>
     </Router>
   );
 }
