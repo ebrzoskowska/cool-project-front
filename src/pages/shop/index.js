@@ -47,9 +47,9 @@ const getGames = async (game, setGame) => {
               <h4 className="info, price">{item.price}</h4>
               <div className ="btn-wrapper">
                 <button className ="btn info-btn">
-                  <Link className ="info-btn" to={`/${item._id}`}>More Info</Link>
+                  <Link className ="info-btn" to={`/${item._id}`}>INFO</Link>
                 </button>
-                <button className ="btn">Add to Basket</button>
+                <button className ="btn">BUY</button>
               </div>
             </div>
            )
