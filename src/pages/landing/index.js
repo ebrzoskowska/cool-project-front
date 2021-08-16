@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { fetchUsers } from '../../utils';
 import { Redirect } from "react-router-dom";
 
-import './landingStyles.css'
+
+import './landingStyles.css';
+import logo from '../../components/mist-logo-black.png';
+
 
 export const LandingPage = ({user, setUser}) => {
 
@@ -10,27 +13,28 @@ export const LandingPage = ({user, setUser}) => {
   const [email, setEmail] = useState();
   const [username, setUsername] = useState();
   const [pass, setPass] = useState();
-  // const [age, setAge] = useState();
-  // const [paymentInfo, setPaymentInfo] = useState();
 
   return (
     <div className='formContainer'>
       <div className='formElement'>
-      <h2>SIGN UP OR LOGIN TO YOUR ACCOUNT</h2>
+
+      <div className="formElement__logo-container">
+        <img className="formElement__logo" src={logo} alt="Logo" />
+        <h2>SIGN UP / LOGIN TO YOUR ACCOUNT</h2>
+      </div>
       
-      <form onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
+      <div className='formElement__wrapper'>
+      <form className="formElement__form" onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
         {newUser && <input onChange={(e) =>setEmail(e.target.value)} placeholder='Email' />}
         <input onChange={(e) =>setUsername(e.target.value)} placeholder='Username' />
         <input onChange={(e) =>setPass(e.target.value)} placeholder='Password' />
-
-{/* I am not sure if this supposed to be here...
-        <input onChange={(e) =>setAge(e.target.value)} placeholder='Your Age' />
-        <input onChange={(e) =>setPaymentInfo(e.target.value)} placeholder='Your Payment' /> */}
-
         <button type='submit'>{newUser ? 'Sign Up' : 'Log In'}</button>
       </form>
       <button type='button' onClick={() => setNewUser(!newUser)}>{newUser ? 'Log In' : 'Sign Up'}</button>
       {user && <Redirect to='/shop'/>}
+      </div>
+
+
       </div>
     </div>
   )

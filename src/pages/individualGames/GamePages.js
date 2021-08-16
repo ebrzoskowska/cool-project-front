@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Route } from "react-router-dom";
 import { GamePage } from "./GamePage";
+import './GamePageStyles.css'
 
 const GamePages = () =>{
 
@@ -29,23 +30,21 @@ if (loading) {
     return (<h1 className = "Loading">Loading...</h1>)
   } else {
     return(
-        <div>
-            <div className="container">
-      {games.map((item, index) => {
-          return (
-            <Route
-              key={index}
-              path={`/${item._id}`}
-              children={<GamePage game={item} />}
-            />
-          );
-        
-      })}
-    </div>
+        <div className="gamePage__container">
+            <div>
+            {games.map((item, index) => {
+                return (
+                    <Route
+                    key={index}
+                    path={`/${item._id}`}
+                    children={<GamePage game={item} />}
+                    />
+                );
+            })}
+            </div>
         </div>
-
-    )
-}
+        )
+    }
 }
 
 export {GamePages}
