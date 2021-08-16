@@ -1,31 +1,42 @@
 .formContainer {
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+	background: #052b46;
 }
 
 .formElement {
-  width: 40vw;
+  width: 45vw;
   height: 60vh;
   display: flex;
   flex-direction: column;
-  padding: 30px;
 	background: #FFFFFF;
-	margin: 50px auto;
-	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+	box-shadow: 20px 25px 22px -10px #000000;
 }
 
-.formElement h2{
+.formElement__logo-container {
+	display: flex;
+  justify-content: center;
+  align-items: center;
 	background: black;
 	color: #fff;
+}
+
+.formElement__logo {
+	height: 20vh;
+}
+
+.formElement h2 {
 	font-size: 20px;
 	font-weight: 200;
-	padding: 20px;
-	margin: -30px -30px 30px -30px;
+}
+
+.formElement__wrapper {
+	display: inline-block;
+  width: 80%;
+  margin: auto;
 }
 
 .formElement input {
@@ -53,7 +64,7 @@
 	display: inline-block;
 	cursor: pointer;
 	color: #FFFFFF;
-	font-family: 'Open Sans Condensed', sans-serif;
+
 	font-size: 18px;
 	padding: 8px 18px;
 	text-decoration: none;
