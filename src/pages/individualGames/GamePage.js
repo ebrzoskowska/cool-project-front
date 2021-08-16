@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import {Navbar} from '../navbar'
 
-const GamePage = ({game}) => {
-    const [submit, setSubmit] = useState(false)
-    const [user, setUser] = useState("Anynymous");
+const GamePage = ({game, user, setUser}) => {
     const [content, setContent] = useState("")
     const [recommend, setRecommend] = useState(false)
 
-    // useEffect(()=>{
-    //     setSubmit(false)
-    // }, [submit])
     
 
     const postComment = async (game, user, content, thumbs) => {
-        let date = new Date()
-        console.log(date)
+        let date = "today"
         let response = await fetch(`${process.env.REACT_APP_REST_API}games`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -26,7 +20,7 @@ const GamePage = ({game}) => {
                 date: date
             })
         })
-        let newGame = response.game;
+        let newGame = await response.game;
         console.log(newGame);
     }
 
@@ -54,7 +48,6 @@ const GamePage = ({game}) => {
         </div>
         <div>
             <form>
-                <input placeholder="user" onChange={(e) =>setUser(e.target.value)}/>
                 <input placeholder="Your post goes here" onChange={(e) =>setContent(e.target.value)}/>
                 {/* <input type="radio" onSelect={()=>{setRecommend(true)}}>Thumbs Up</input>
                 <input type="radio" onSelect={()=>{setRecommend(false)}}>Thumbs Down</input> */}

@@ -28,9 +28,9 @@ const App = () => {
         <Shop/>
       </Route>
       <Route path='/accountDetails'>
-        <Account user={user}/>
+        <Account user={user} setUser={setUser}/>
       </Route>
-      <GamePages setUser={setUser}/>
+      <GamePages user={user} setUser={setUser}/>
     </Router>
   );
 }
