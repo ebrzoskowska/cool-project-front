@@ -69,6 +69,7 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
             />
             {/* <input type="radio" onSelect={()=>{setRecommend(true)}}>Thumbs Up</input>
                 <input type="radio" onSelect={()=>{setRecommend(false)}}>Thumbs Down</input> */}
+
             <button
               className="btn"
               type="submit"
@@ -79,6 +80,7 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
               Post
             </button>
           </form>
+
         </div>
       </div>
     </div>
