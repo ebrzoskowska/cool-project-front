@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react';
 import { Navbar } from '../navbar';
 
 
-export const Account = ({user}) =>{
+export const Account = ({user, setUser}) =>{
 
 const [pass, setPass] = useState('')
 const [userData, setUserData] = useState([])
@@ -26,7 +26,7 @@ const [confirmPass, setConfirmPass] = useState(false)
 
     return(
         <div>
-            <Navbar/>
+            <Navbar setUser={setUser}/>
             {confirmPass ? <div>
                 <p>{userData.username}</p>
                 <p>{userData.password}</p>
