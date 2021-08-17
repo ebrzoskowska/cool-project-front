@@ -46,7 +46,7 @@ export const List = ({ image, items, handleRemove, prices }) => {
         return <Card key={index} index={index} image={image} price={price} rmFunction={() => handleRemove(index)}>{item}</Card>;
       })}
     </ul>
-    <p className="total" >Total: £{total}</p>
+    <p className="total" >Total: £{total.toFixed( 2 )}</p>
     <button className="checkout" type="button">Checkout</button>
     </div>
     </StyledContainer>
