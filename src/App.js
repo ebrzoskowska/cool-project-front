@@ -17,6 +17,7 @@ const App = () => {
   const [game, setGame] = useState("Loading");
   const [items,setItems] = useState([])
   const [prices, setPrices] = useState('')
+  const [image, setImage] = useState('')
 
   useEffect(() => {
     authUser(setUser)
@@ -30,14 +31,14 @@ const App = () => {
       </Route>
       <Route path='/shop'>
         <Navbar setUser={setUser} />
-        <Shop loading={loading} setLoading={setLoading} game={game} setGame={setGame} items={items} setItems={setItems} prices={prices} setPrices={setPrices}/>
+        <Shop loading={loading} setLoading={setLoading} game={game} setGame={setGame} items={items} setItems={setItems} prices={prices} setPrices={setPrices} image={image} setImage={setImage}/>
       </Route>
       <Route path='/accountDetails'>
         <Account user={user}/>
       </Route>
       <Route path='/basket'>
         <Navbar setUser={setUser} />
-        <Cart items={items} setItems={setItems} prices={prices} setPrices={setPrices}/>
+        <Cart items={items} setItems={setItems} prices={prices} setPrices={setPrices}image={image} setImage={setImage}/>
            </Route>
       <GamePages setUser={setUser}/>
     </Router>

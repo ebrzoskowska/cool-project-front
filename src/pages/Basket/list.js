@@ -34,7 +34,7 @@ ul{
   border: solid 2px slategray;
 }
 `;
-export const List = ({ items, handleRemove, prices }) => {
+export const List = ({ image, items, handleRemove, prices }) => {
    const total = prices.reduce((a, b) =>  parseFloat(a)+parseFloat(b))
   
   return (
@@ -43,7 +43,7 @@ export const List = ({ items, handleRemove, prices }) => {
       <ul>
       {items.map((item, index) => {
         const price = prices[index]
-        return <Card key={index} price={price} rmFunction={() => handleRemove(index)}>{item}</Card>;
+        return <Card key={index} image={image} price={price} rmFunction={() => handleRemove(index)}>{item}</Card>;
       })}
     </ul>
     <p className="total" >Total: £{total}</p>
