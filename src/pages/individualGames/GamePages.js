@@ -37,7 +37,7 @@ if (loading) {
                     <Route
                     key={index}
                     path={`/${item._id}`}
-                    children={<GamePage game={item} user={user} setUser={setUser}/>}
+                    children={<GamePage game={item} user={user} setUser={setUser} setLoading={setLoading}/>}
                     />
                 );
             })}
