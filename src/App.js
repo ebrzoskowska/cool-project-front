@@ -17,7 +17,7 @@ const App = () => {
   const [game, setGame] = useState("Loading");
   const [items,setItems] = useState([])
   const [prices, setPrices] = useState('')
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState([])
 
   useEffect(() => {
     authUser(setUser)
