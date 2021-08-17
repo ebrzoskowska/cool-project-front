@@ -43,7 +43,7 @@ export const List = ({ image, items, handleRemove, prices }) => {
       <ul>
       {items.map((item, index) => {
         const price = prices[index]
-        return <Card key={index} image={image} price={price} rmFunction={() => handleRemove(index)}>{item}</Card>;
+        return <Card key={index} index={index} image={image} price={price} rmFunction={() => handleRemove(index)}>{item}</Card>;
       })}
     </ul>
     <p className="total" >Total: £{total}</p>
