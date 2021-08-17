@@ -3,14 +3,15 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './shop.css'
 
-export const Shop = ({loading, setLoading, game, setGame, items, setItems, prices, setPrices}) => {
+export const Shop = ({loading, setLoading, game, setGame, items, setItems, prices, setPrices, image, setImage}) => {
 
 
-  const handleItem = (newItem, newPrices) => {
+  const handleItem = (newItem, newPrices, newImage) => {
 
     let x = newPrices.substring(1)
     setItems([...items, newItem]);
     setPrices([...prices, x]);
+    setImage([...image, newImage])
   };
 
 useEffect( async () => {
@@ -55,8 +56,10 @@ const getGames = async (game, setGame) => {
                   <Link className ="info-btn" to={`/${item._id}`}>INFO</Link>
                 </button>
                 <button className ="btn"  type="button" onClick={() => {
-                  handleItem(item.title, item.price);
-                    }}>BUY</button>
+
+                  handleItem(item.title, item.price, item.image);
+                      }}>Add to Basket</button>
+
               </div>
             </div>
            )

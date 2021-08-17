@@ -31,10 +31,11 @@ span{
   align-self: center;
 }`;
 
-export const Card = ({ children, rmFunction, price }) => {
+export const Card = ({ children, rmFunction, image, price }) => {
   return (
     <StyledContainer>
       <li>
+        <img src = {image} alt = "Gone walk about"></img>
         <span>{children}</span>
         <p>£{price}</p>
         <button onClick={rmFunction}>Remove from basket</button>
