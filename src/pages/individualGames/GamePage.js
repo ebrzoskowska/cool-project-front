@@ -57,7 +57,7 @@ const GamePage = ({game, user, setUser}) => {
                 <input className='gamePage__input gamePage__input-post' placeholder="your post..." onChange={(e) =>setContent(e.target.value)}/>
                 {/* <input type="radio" onSelect={()=>{setRecommend(true)}}>Thumbs Up</input>
                 <input type="radio" onSelect={()=>{setRecommend(false)}}>Thumbs Down</input> */}
-                <button className='btn' type="submit" onClick={()=>{postComment(game, user, content, recommend)}}>Post</button>
+                <button className='postBtn' type="submit" onClick={()=>{postComment(game, user, content, recommend)}}>Post</button>
             </form>
         </div>
         </div>

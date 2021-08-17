@@ -55,10 +55,8 @@ const getGames = async (game, setGame) => {
                   <Link className ="info-btn" to={`/${item._id}`}>INFO</Link>
                 </button>
                 <button className ="btn"  type="button" onClick={() => {
-
                   handleItem(item.title, item.price);
-                      }}>Add to Basket</button>
-
+                    }}>BUY</button>
               </div>
             </div>
            )
