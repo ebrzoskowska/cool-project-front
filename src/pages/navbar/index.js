@@ -18,9 +18,9 @@ export const Navbar = ({setUser}) => {
       <Link to="/shop"> <img className="navMenuLogo" src={logo} alt="Logo" /></Link>      
     </div>
     <div className="navMenuContainer">
-      <Link className='navMenuItem' to="/shop"> Mist Shop </Link>
-      <Link className='navMenuItem' to="/accountDetails">Account Details </Link>
-      <Link className='navMenuItem' to="/basket"> Basket </Link>
+      <Link className='navMenuItem' to="/shop"> Shop </Link>
+      <Link className='navMenuItem' to="/accountDetails">Account </Link>
+      <Link className='navMenuItem' to="/basket"> Card </Link>
       <button className="btn-logout" onClick={(e) =>logOutHandler(e)}>Logout</button>
     </div>  
     </ul>
