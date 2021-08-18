@@ -1,5 +1,6 @@
 import {React, useState, useEffect} from 'react';
 import { Navbar } from '../navbar';
+import './accountDetailsStyles.css';
 
 
 export const Account = ({user}) =>{
@@ -59,36 +60,38 @@ useEffect(()=>{
     }
 
     return(
-        <div>
+        <div className='accountDetContainer'>
             <Navbar/>
-            {confirmPass ? <div>
+            <div className='accountDetWrapper'>
+            {confirmPass ? <div className='accountDetWrapper2'>
                 <p>Username: {userData.username}</p>
-                <p>Password: {userData.password}</p>
-                <form onSubmit={(e)=>{updateUser(e)}}>
-                    <input type = 'text' placeholder = 'Update Password' onChange = {(e)=>setNewPass(e.target.value)}/>
-                    <button type = 'submit'>Update</button>
+                <p>Password: {userData.password}</p>           
+                <form className='accountDet__form' onSubmit={(e)=>{updateUser(e)}}>
+                    <input className='accountDet__input' type = 'text' placeholder = 'Update Password' onChange = {(e)=>setNewPass(e.target.value)}/>
+                    <button className='accountDetBtn' type = 'submit'>Update</button>
                 </form>
                 <p>Email: {userData.email}</p>
-                <form onSubmit={(e)=>{updateUser(e)}}>
-                    <input type = 'text' placeholder = 'Update Email' onChange = {(e)=>setEmail(e.target.value)}/>
-                    <button type = 'submit'>Update</button>
+                <form className='accountDet__form' onSubmit={(e)=>{updateUser(e)}}>
+                    <input className='accountDet__input' type = 'text' placeholder = 'Update Email' onChange = {(e)=>setEmail(e.target.value)}/>
+                    <button className='accountDetBtn' type = 'submit'>Update</button>
                 </form>
                 <p>Age: {userData.age}</p>
-                <form onSubmit={(e)=>{updateUser(e)}}>
-                    <input type = 'text' placeholder = 'Update Age' onChange = {(e)=>setAge(e.target.value)}/>
-                    <button type = 'submit'>Update</button>
+                <form className='accountDet__form' onSubmit={(e)=>{updateUser(e)}}>
+                    <input className='accountDet__input' type = 'text' placeholder = 'Update Age' onChange = {(e)=>setAge(e.target.value)}/>
+                    <button className='accountDetBtn' type = 'submit'>Update</button>
                 </form>
                 <p>Payment Info: {userData.paymentInfo}</p>
-                <form onSubmit={(e)=>{updateUser(e)}}>
-                    <input type = 'text' placeholder = 'Update Payment Info' onChange = {(e)=>setPaymentInfo(e.target.value)}/>
-                    <button type = 'submit'>Update</button>
+                <form className='accountDet__form' onSubmit={(e)=>{updateUser(e)}}>
+                    <input className='accountDet__input' type = 'text' placeholder = 'Update Payment Info' onChange = {(e)=>setPaymentInfo(e.target.value)}/>
+                    <button className='accountDetBtn' type = 'submit'>Update</button>
                 </form>
 
             </div> :
-                <form>
-                    <input type='text' placeholder='Please confirm password to proceed' value={pass} onChange={e=>setPass(e.target.value)}/>
-                    <button type='button' onClick={()=>{getUser(pass)}}>Submit</button>
+                <form className='accountDet__form'>
+                    <input className='accountDet__input' type='text' placeholder='Please confirm password to proceed' value={pass} onChange={e=>setPass(e.target.value)}/>
+                    <button className='accountDetBtn' type='button' onClick={()=>{getUser(pass)}}>Submit</button>
                 </form>}
             </div>
+        </div>    
     )
 }
