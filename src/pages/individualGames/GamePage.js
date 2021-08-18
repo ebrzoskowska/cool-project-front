@@ -4,15 +4,14 @@ import { Navbar } from "../navbar";
 const GamePage = ({ game, user, setUser, setLoading }) => {
   const [content, setContent] = useState("");
   const [recommend, setRecommend] = useState(false);
-  const [comments, setComments] = useState(game.comments)
-  const [submitted, setSubmitted] = useState(false)
 
-//   useEffect(()=>{}
-//       , [submitted])
 
   const postComment = async (e, game, user, content, thumbs) => {
       e.preventDefault()
-    let date = "today";
+    const today = new Date();
+    const [day, month, year] = [today.getDate(), (today.getMonth() + 1), today.getFullYear()]
+    const [minutes, hours] = [today.getMinutes(), today.getHours()]
+    let date = `${hours}:${minutes} ${day}/${month}/${year}`
     let response = await fetch(`${process.env.REACT_APP_REST_API}games`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -25,11 +24,6 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
       }),
     });
     setLoading(true);
-    // let newGame = response.game;
-    // if (newGame.comments !== comments) {
-    //     setSubmitted(!submitted)
-    // }
-
   };
 
   return (
@@ -50,7 +44,7 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
               <div className="gamePage__comment-wrapper" key={index}>
                 <div className="gamePage__user-info">
                   <p>posted by: {comment.user}</p>
-                  <p>date: {comment.date}</p>
+                  <p>{comment.date}</p>
                 </div>
                 <p>{comment.content}</p>
                 <p>{comment.rating}</p>
@@ -61,7 +55,6 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
 
         <div className="gamePage__form-wrapper">
           <form className="gamePage__form">
-            {/* <input className='gamePage__input' placeholder="user" onChange={(e) =>setUser(e.target.value)}/> */}
             <input
               className="gamePage__input gamePage__input-post"
               placeholder="your post..."
