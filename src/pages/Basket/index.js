@@ -14,13 +14,11 @@ export const Cart = ({ items, setItems, prices, setPrices, image, setImage }) =>
   };
 
   return (
-      <div>
-        <div>
-          {items.length > 0 && (
-            <List image={image} items={items} prices={prices} handleRemove={handleRemove} />
-          )}
-        </div>
-      </div>
+    <div>
+      {items.length > 0 && (
+        <List image={image} items={items} prices={prices} handleRemove={handleRemove} />
+      )}
+    </div>
   );
 };
 

@@ -64,16 +64,13 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
                 <input type="radio" onSelect={()=>{setRecommend(false)}}>Thumbs Down</input> */}
 
             <button
-              className="btn"
+              className="postBtn"
               type="submit"
               onClick={(e) => {
                 postComment(e, game, user, content, recommend);
-              }}
-            >
-              Post
+              }}> Post            
             </button>
           </form>
-
         </div>
       </div>
     </div>

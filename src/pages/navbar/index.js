@@ -14,16 +14,13 @@ export const Navbar = ({setUser}) => {
 
   return (
     <ul className="navMenu">
-    <div className="navMenuLogoContainer">
-    
-      <img className="navMenuLogo" src={logo} alt="Logo"></img>
-    
-        
+    <div className="navMenuLogoContainer">   
+      <Link to="/shop"> <img className="navMenuLogo" src={logo} alt="Logo" /></Link>      
     </div>
     <div className="navMenuContainer">
-      <Link to="/shop"> Mist Shop </Link>
-      <Link to="/accountDetails">Account Details </Link>
-      <Link to="/basket"> Basket </Link>
+      <Link className='navMenuItem' to="/shop"> Mist Shop </Link>
+      <Link className='navMenuItem' to="/accountDetails">Account Details </Link>
+      <Link className='navMenuItem' to="/basket"> Basket </Link>
       <button className="btn-logout" onClick={(e) =>logOutHandler(e)}>Logout</button>
     </div>  
     </ul>
