@@ -58,8 +58,7 @@ const getGames = async (game, setGame) => {
                 <button className ="btn"  type="button" onClick={() => {
 
                   handleItem(item.title, item.price, item.image);
-                      }}>Add to Basket</button>
-
+                    }}>BUY</button>
               </div>
             </div>
            )
