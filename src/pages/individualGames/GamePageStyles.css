@@ -99,3 +99,9 @@
   box-shadow: 20px 25px 22px -10px #000000;
   text-transform: uppercase;
 }
+
+@media (max-width: 920px) {  
+  .gamePage__game-title {
+    font-size: 20px;
+  }
+}

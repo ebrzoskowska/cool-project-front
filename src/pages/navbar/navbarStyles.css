@@ -25,10 +25,9 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-
 }
 
-.navMenu a {
+.navMenuItem {
   color: #fff;
 	font-size: 18px;
 	font-weight: 200;
@@ -39,6 +38,10 @@
   text-transform: uppercase;
   font-size: 25px;
   padding-right: 15px;
+}
+
+.navMenuItem:hover {
+  text-decoration: underline;
 }
 
 .btn-logout {
@@ -60,5 +63,18 @@
 .btn-logout:hover {
 	background:linear-gradient(to bottom, #61A5C2 5%, #2C7DA0 100%);
 	background-color:#61A5C2;
+}
+
+
+@media (max-width: 800px) {
+  .navMenuLogo {
+    width: 15vh;
+  }
+  
+  .navMenuItem,
+  .btn-logout {
+    font-size: 15px;
+  }
+
 }
 
