@@ -14,8 +14,8 @@ export const Cart = ({ items, setItems, prices, setPrices, image, setImage }) =>
   };
 
   return (
-      <div className="container">
-        <div className="wrapper">
+      <div>
+        <div>
           {items.length > 0 && (
             <List image={image} items={items} prices={prices} handleRemove={handleRemove} />
           )}
