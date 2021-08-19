@@ -16,6 +16,7 @@
     justify-content: center;
     background: #052b46;
     color: white;   
+    margin-bottom: 30px;
 }
 
 .gamesItem {
@@ -95,3 +96,15 @@
     }
 
 }
+
+@media (max-width: 620px) {  
+    .gamePic {
+      height: 500px;
+      width: 350px;
+    }
+    
+    .price, .title {
+      font-size: 20px;
+    }
+  }
+  

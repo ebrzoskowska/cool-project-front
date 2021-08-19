@@ -4,17 +4,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-	background: #052b46;
 }
 
 .formElement {
   width: 45vw;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-	background: #FFFFFF;
+	background: #000;
 	box-shadow: 20px 25px 22px -10px #000000;
+	color: #89C2D9;
 }
+
 
 .formElement__logo-container {
 	display: flex;
@@ -39,7 +40,7 @@
   margin: auto;
 }
 
-.formElement input {
+.formElement__input {
   box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -50,10 +51,18 @@
 	border: none;
 	border-bottom: 1px solid #ddd;
 	background: transparent;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
 	height: 45px;
 	font-size: 16px;
+	color: #A9D6E5;
 }
+
+.formElement__input::placeholder {
+  color: #A9D6E5;
+  padding-left: 15px;
+	font-size: 1rem;
+}
+
 
 .formElement button {
 	-moz-box-shadow: inset 0px 1px 0px 0px #89C2D9;
@@ -64,7 +73,6 @@
 	display: inline-block;
 	cursor: pointer;
 	color: #FFFFFF;
-
 	font-size: 18px;
 	padding: 8px 18px;
 	text-decoration: none;
