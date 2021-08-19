@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './shop.css'
 
@@ -14,12 +14,9 @@ export const Shop = ({loading, setLoading, game, setGame, items, setItems, price
     setImage([...image, newImage])
   };
 
-useEffect( async () => {
-  //console.log("UseEffect")
-  await getGames(game, setGame)
-  if (game.length > 0) {
-    setLoading(false)
-  }  
+useEffect( () => {
+//const x = async () =>{await getGames(game, setGame)}
+ getGames(game, setGame)
 },[loading])
 
 
@@ -27,11 +24,9 @@ const getGames = async (game, setGame) => {
 
   try {
     const response = await fetch(`${process.env.REACT_APP_REST_API}games`)
-   // console.log (response)
     const data = await response.json()
-    //console.log(data)
     await setGame(data.targetGames)
-    //console.log(game)
+    setLoading(false)
   } catch (error) {
     console.log(error)
   }

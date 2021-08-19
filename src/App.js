@@ -14,9 +14,9 @@ const App = () => {
 
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
-  const [game, setGame] = useState("Loading");
+  const [game, setGame] = useState([]);
   const [items,setItems] = useState([])
-  const [prices, setPrices] = useState('')
+  const [prices, setPrices] = useState([])
   const [image, setImage] = useState([])
 
   useEffect(() => {

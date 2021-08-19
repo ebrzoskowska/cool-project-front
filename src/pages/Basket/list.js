@@ -35,9 +35,10 @@ ul{
 }
 `;
 export const List = ({ image, items, handleRemove, prices }) => {
-   const total = prices.reduce((a, b) =>  parseFloat(a)+parseFloat(b))
+   const total = prices.reduce((a, b) => parseFloat(a)+ parseFloat(b))
+   const finalTotal = Number.parseFloat(total).toFixed(2);
   
-  return (
+   return (
     <StyledContainer>
     <div>
       <ul>
@@ -46,7 +47,7 @@ export const List = ({ image, items, handleRemove, prices }) => {
         return <Card key={index} index={index} image={image} price={price} rmFunction={() => handleRemove(index)}>{item}</Card>;
       })}
     </ul>
-    <p className="total" >Total: £{total.toFixed( 2 )}</p>
+    <p className="total" >Total: £{finalTotal}</p>
     <button className="checkout" type="button">Checkout</button>
     </div>
     </StyledContainer>
