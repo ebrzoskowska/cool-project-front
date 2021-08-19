@@ -1,10 +1,15 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './shop.css'
 
-export const Shop = ({loading, setLoading, game, setGame, items, setItems, prices, setPrices, image, setImage}) => {
+export const Shop = ({items, setItems, prices, setPrices, image, setImage}) => {
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+useEffect(() => {
+  getGames(setGames)
+}, [loading])
 
   const handleItem = (newItem, newPrices, newImage) => {
 
@@ -14,18 +19,14 @@ export const Shop = ({loading, setLoading, game, setGame, items, setItems, price
     setImage([...image, newImage])
   };
 
-useEffect( () => {
-//const x = async () =>{await getGames(game, setGame)}
- getGames(game, setGame)
-},[loading])
 
 
-const getGames = async (game, setGame) => {
 
+const getGames = async (setGames) => {
   try {
     const response = await fetch(`${process.env.REACT_APP_REST_API}games`)
     const data = await response.json()
-    await setGame(data.targetGames)
+    await setGames(data.targetGames)
     setLoading(false)
   } catch (error) {
     console.log(error)
@@ -38,7 +39,7 @@ const getGames = async (game, setGame) => {
     return (
       <div>
         <div className ="container">
-          {game.map((item,index) => {
+          {games.map((item,index) => {
           return (
             <div className="gamesItem" key = {index}>
               <h3 className="info, title">{item.title}</h3>

@@ -42,7 +42,7 @@ useEffect(()=>{
 
     const updateUser = async (e) => {
         e.preventDefault()
-        let response = await fetch(`${process.env.REACT_APP_REST_API}users`, {
+        await fetch(`${process.env.REACT_APP_REST_API}users`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
