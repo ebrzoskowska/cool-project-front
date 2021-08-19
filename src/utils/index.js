@@ -3,7 +3,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
   try {
       let response;
       if (email) {
-          response = await fetch(`http://localhost:5000/`, {
+          response = await fetch(`${process.env.REACT_APP_REST_API}users`, {
               method: 'POST',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -13,7 +13,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
               })
           })
       } else {
-          response = await fetch(`http://localhost:5000/${username}`, {
+          response = await fetch(`${process.env.REACT_APP_REST_API}users/${username}`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -35,7 +35,7 @@ export const authUser = async (setUser) => {
     if (localStorage.MyToken) {
       try
       {
-        const response = await fetch(`http://localhost:5000/users`, {
+        const response = await fetch(`${process.env.REACT_APP_REST_API}users`, {
           method: 'GET',
           headers: {"Authorization": `Bearer ${localStorage.getItem("MyToken")}`}
         })
