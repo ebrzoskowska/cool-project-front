@@ -8,12 +8,9 @@ const GamePages = ({user, setUser}) =>{
 const [loading, setLoading] = useState(true);
 const [games, setGames] = useState("Loading");
 
-useEffect(async () => {
-    await getGames(games, setGames)
-    if (games.length > 0) {
-        setLoading(false)
-    }
-}, [loading])
+useEffect(() => {
+     getGames(games, setGames)
+    }, [loading])
 
 const getGames = async (games, setGames) => {
 
@@ -22,6 +19,7 @@ const getGames = async (games, setGames) => {
         const data = await response.json()
         await setGames(data.targetGames)
         console.log(games)
+        setLoading(false)
     } catch (error) {
         console.log(error)
     }
