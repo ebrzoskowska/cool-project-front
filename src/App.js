@@ -13,8 +13,6 @@ import { Cart } from './pages/Basket'
 const App = () => {
 
   const [user, setUser] = useState();
-  const [loading, setLoading] = useState(true);
-  const [game, setGame] = useState([]);
   const [items,setItems] = useState([])
   const [prices, setPrices] = useState([])
   const [image, setImage] = useState([])
@@ -31,7 +29,7 @@ const App = () => {
       </Route>
       <Route path='/shop'>
         <Navbar setUser={setUser} />
-        <Shop loading={loading} setLoading={setLoading} game={game} setGame={setGame} items={items} setItems={setItems} prices={prices} setPrices={setPrices} image={image} setImage={setImage}/>
+        <Shop  items={items} setItems={setItems} prices={prices} setPrices={setPrices} image={image} setImage={setImage}/>
       </Route>
       <Route path='/accountDetails'>
         <Account user={user} setUser={setUser}/>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Navbar } from "../navbar";
 
 const GamePage = ({ game, user, setUser, setLoading }) => {
@@ -12,7 +12,7 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
     const [day, month, year] = [today.getDate(), (today.getMonth() + 1), today.getFullYear()]
     const [minutes, hours] = [today.getMinutes(), today.getHours()]
     let date = `${hours}:${minutes} ${day}/${month}/${year}`
-    let response = await fetch(`${process.env.REACT_APP_REST_API}games`, {
+    await fetch(`${process.env.REACT_APP_REST_API}games`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -60,9 +60,8 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
               placeholder="your post..."
               onChange={(e) => setContent(e.target.value)}
             />
-            {/* <input type="radio" onSelect={()=>{setRecommend(true)}}>Thumbs Up</input>
-                <input type="radio" onSelect={()=>{setRecommend(false)}}>Thumbs Down</input> */}
-
+            <input type="checkbox"  onClick={()=>{setRecommend(!recommend)}}/>
+            <label >Recommend?</label>
             <button
               className="postBtn"
               type="submit"
