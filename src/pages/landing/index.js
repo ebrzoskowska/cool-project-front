@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { fetchUsers } from '../../utils';
 import { Redirect } from "react-router-dom";
-
+import { Carousel } from 'react-responsive-carousel';
+import { Carousels } from './carousel';
 
 import './landingStyles.css';
 import logo from '../../components/mist-logo-black.png';
@@ -36,6 +37,7 @@ export const LandingPage = ({user, setUser}) => {
 
 
       </div>
+      //<Carousels></Carousels>//
     </div>
   )
 }
