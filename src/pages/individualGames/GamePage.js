@@ -60,7 +60,7 @@ const GamePage = ({ game, user, setUser, setLoading }) => {
               placeholder="your post..."
               onChange={(e) => setContent(e.target.value)}
             />
-            <input type="checkbox"  onClick={()=>{setRecommend(!recommend)}}/>
+            <input className="gamePage__checkbox" type="checkbox" onClick={()=>{setRecommend(!recommend)}}/>
             <label >Recommend?</label>
             <button
               className="postBtn"
