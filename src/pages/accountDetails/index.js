@@ -88,7 +88,7 @@ useEffect(()=>{
 
             </div> :
                 <form className='accountDet__form'>
-                    <input className='accountDet__input' type='text' placeholder='Please confirm password to proceed' value={pass} onChange={e=>setPass(e.target.value)}/>
+                    <input className='accountDet__input' type='password' placeholder='Please confirm password to proceed' value={pass} onChange={e=>setPass(e.target.value)}/>
                     <button className='accountDetBtn' type='button' onClick={()=>{getUser(pass)}}>Submit</button>
                 </form>}
             </div>
