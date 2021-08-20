@@ -2,6 +2,9 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './shop.css'
+import './popup.css'
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+// import 'react-notifications/lib/notifications.css';
 
 export const Shop = ({items, setItems, prices, setPrices, image, setImage}) => {
   const [games, setGames] = useState([]);
@@ -18,8 +21,6 @@ useEffect(() => {
     setPrices([...prices, x]);
     setImage([...image, newImage])
   };
-
-
 
 
 const getGames = async (setGames) => {
@@ -54,7 +55,9 @@ const getGames = async (setGames) => {
                 <button className ="btn"  type="button" onClick={() => {
 
                   handleItem(item.title, item.price, item.image);
+                  NotificationManager.info('Added to Cart');
                     }}>BUY</button>
+                    <NotificationContainer/>
               </div>
             </div>
            )

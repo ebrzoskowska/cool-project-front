@@ -8,6 +8,7 @@ const GamePages = ({user, setUser}) =>{
 const [loading, setLoading] = useState(true);
 const [games, setGames] = useState([]);
 
+
 useEffect( () => {
     getGames(setGames)
 }, [loading])
