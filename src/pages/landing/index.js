@@ -28,7 +28,7 @@ export const LandingPage = ({user, setUser}) => {
       <form className="formElement__form" onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
         {newUser && <input className="formElement__input" onChange={(e) =>setEmail(e.target.value)} placeholder='email' />}
         <input className="formElement__input" onChange={(e) =>setUsername(e.target.value)} placeholder='username' />
-        <input className="formElement__input" onChange={(e) =>setPass(e.target.value)} placeholder='password' />
+        <input type='password' className="formElement__input" onChange={(e) =>setPass(e.target.value)} placeholder='password' />
         <button type='submit'>{newUser ? 'Sign Up' : 'Log In'}</button>
       </form>
       <button type='button' onClick={() => setNewUser(!newUser)}>{newUser ? 'Log In' : 'Sign Up'}</button>
