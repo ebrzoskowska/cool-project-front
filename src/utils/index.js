@@ -40,7 +40,6 @@ export const authUser = async (setUser) => {
           headers: {"Authorization": `Bearer ${localStorage.getItem("MyToken")}`}
         })
         const data = await response.json();
-        console.log(data)
         setUser(data.username);
       }
       catch (error)

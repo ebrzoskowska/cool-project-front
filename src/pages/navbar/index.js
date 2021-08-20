@@ -20,7 +20,7 @@ export const Navbar = ({setUser}) => {
     <div className="navMenuContainer">
       <Link className='navMenuItem' to="/shop"> Shop </Link>
       <Link className='navMenuItem' to="/accountDetails">Account </Link>
-      <Link className='navMenuItem' to="/basket"> Card </Link>
+      <Link className='navMenuItem' to="/basket"> Cart </Link>
       <button className="btn-logout" onClick={(e) =>logOutHandler(e)}>Logout</button>
     </div>  
     </ul>

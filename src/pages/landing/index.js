@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { fetchUsers } from '../../utils';
 import { Redirect } from "react-router-dom";
-import { Carousel } from 'react-responsive-carousel';
-import { Carousels } from './carousel';
+// import { Carousel } from 'react-responsive-carousel';
+// import { Carousels } from './carousel';
 
 import './landingStyles.css';
 import logo from '../../components/mist-logo-black.png';
@@ -26,7 +26,7 @@ export const LandingPage = ({user, setUser}) => {
       
       <div className='formElement__wrapper'>
       <form className="formElement__form" onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
-        {newUser && <input onChange={(e) =>setEmail(e.target.value)} placeholder='Email' />}
+        {newUser && <input className="formElement__input" onChange={(e) =>setEmail(e.target.value)} placeholder='email' />}
         <input className="formElement__input" onChange={(e) =>setUsername(e.target.value)} placeholder='username' />
         <input className="formElement__input" onChange={(e) =>setPass(e.target.value)} placeholder='password' />
         <button type='submit'>{newUser ? 'Sign Up' : 'Log In'}</button>
@@ -37,7 +37,7 @@ export const LandingPage = ({user, setUser}) => {
 
 
       </div>
-      //<Carousels></Carousels>//
+      {/* //<Carousels></Carousels>// */}
     </div>
   )
 }

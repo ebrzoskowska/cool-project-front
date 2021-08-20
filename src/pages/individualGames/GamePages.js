@@ -6,20 +6,21 @@ import './GamePageStyles.css'
 const GamePages = ({user, setUser}) =>{
 
 const [loading, setLoading] = useState(true);
-const [games, setGames] = useState("Loading");
+const [games, setGames] = useState([]);
 
-useEffect(() => {
-     getGames(games, setGames)
-    }, [loading])
 
-const getGames = async (games, setGames) => {
+useEffect( () => {
+    getGames(setGames)
+}, [loading])
+
+const getGames = async (setGames) => {
 
     try {
         const response = await fetch(`${process.env.REACT_APP_REST_API}games`)
         const data = await response.json()
         await setGames(data.targetGames)
-        console.log(games)
         setLoading(false)
+
     } catch (error) {
         console.log(error)
     }
